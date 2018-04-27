@@ -5,7 +5,7 @@
 	include 'player.php'; 
 
 	session_start();
-
+	
    $pos = $_SESSION['mrx']->station;  
    $transport = $_SESSION['mrx']->transport;
     echo "<h3>Travel log of Mr. X</h3>";   

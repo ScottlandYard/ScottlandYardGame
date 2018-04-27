@@ -11,14 +11,14 @@
        ($_SESSION['stationD5'] == $_SESSION['stationMrx'])){
 
         echo"Congratulation! You found Mr. X at the station ".$_SESSION['stationMrx']; 
- 
-        exit(); 
+		//popEnd();
+        //exit(); 
     } 
     if(!$_SESSION['d1Move'] AND !$_SESSION['d2Move'] AND !$_SESSION['d3Move'] AND !$_SESSION['d4Move'] AND !$_SESSION['d5Move']){
     
         echo "All of you cannot move anymore. <br>Mr. X won!<br>";
- 
-        exit();
+		//popEnd();
+        //exit();
     }
 	
 	
@@ -109,4 +109,9 @@
     
     include 'map.php';
 
+	function popEnd(){
+		session_destroy();
+		header('Location: '.$_SERVER['PHP_SELF']);
+		Exit();
+	}
 ?>
